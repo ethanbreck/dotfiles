@@ -12,3 +12,18 @@ if [ ! $(uname -s) = 'Darwin' ]; then
    alias open='xdg-open';
  fi
 fi
+
+
+alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
+alias youtube-dl-bv='youtube-dl -f bestvideo+bestaudio'
+
+alias wget-calibre='wget -e robots=off -r --level=0 -nc -np --reject index.html'
+
+alias brewup='brew update && brew upgrade && brew cleanup'
+
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder /System/Library/CoreServices/Finder.app'
+
+alias pipup="pip-review --local --interactive"
+alias pip="pip3"
+alias=python="python3"

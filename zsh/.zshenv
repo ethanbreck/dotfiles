@@ -15,10 +15,8 @@ export fpath=( "${ZDOTDIR}/functions" ${fpath[@]} )
 # Path
 PATH="\
 /usr/local/bin:\
-${HOME}/bin:\
 ${DOTDIR}/bin:\
-${DOTDIR}/wrappers:\
-${HOME}/.cargo/bin:\
+${DOTDIR}/bin/wrappers:\
 ${PATH}"
 export PATH
 
@@ -35,7 +33,7 @@ export PAGER=less
 # history file for zsh
 export HISTFILE="${ZDOTDIR}/.zsh_history"
 
-# Increase history size. Allow 32³ entries; the default is 500.
+# Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768';
 
 # Omit duplicates and commands that begin with a space from history.

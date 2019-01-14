@@ -11,9 +11,6 @@
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-# Disable press-and-hold for keys in favor of key repeat.
-defaults write -g ApplePressAndHoldEnabled -bool false
-
 # Use AirDrop over every interface.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
@@ -28,23 +25,9 @@ defaults write com.apple.Finder FXPreferredViewStyle clmv
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
-# Set a fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 20
-
 # Set the Finder prefs for showing a few different volumes on the Desktop.
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-
-# Set up Safari for development.
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
 
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
@@ -58,32 +41,8 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
-
-# Disable automatic capitalization as it’s annoying when typing code
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-
-# Disable smart dashes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-# Disable automatic period substitution as it’s annoying when typing code
-defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-
-# Disable smart quotes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
-# Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array "en-US" "ja-US"
-defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 sudo systemsetup -settimezone "America/Los_Angeles" > /dev/null
@@ -102,9 +61,6 @@ defaults write com.apple.screencapture type -string "png"
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
-# Finder: disable window animations and Get Info animations
-defaults write com.apple.finder DisableAllAnimations -bool true
-
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
@@ -114,15 +70,6 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-
-# Disable the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-# Enable highlight hover effect for the grid view of a stack (Dock)
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
-
-# Set the icon size of Dock items to 60 pixels
-defaults write com.apple.dock tilesize -int 60
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
