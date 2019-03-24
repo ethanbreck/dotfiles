@@ -46,11 +46,12 @@ cask 'transmission'
 cask 'cheatsheet'
 cask 'mpv'
 cask 'discord'
-cask 'google-chrome'
+cask 'firefox'
 
 # Mac App Store
 mas 'Keynote', id: 409183694
 mas 'The Unarchiver', id: 425424353
+mas 'Bandwidth+', id: 490461369
 
 ## Utilities
 cask 'transmission' # torrent client
